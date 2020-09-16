@@ -118,11 +118,6 @@ echo $'\n########\ninstall ncu\n'
 
 npm install -g npm-check-updates
 
-# install locust
-echo $'\n########\ninstall locust\n'
-
-pip3 install locust
-
 # install midnight commander
 echo $'\n########\ninstall midnight commander\n'
 
