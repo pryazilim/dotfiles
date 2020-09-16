@@ -50,8 +50,13 @@ echo $'\n########\ninstall dotnet\n'
 
 cd /tmp
 
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+
 sudo apt-get update
 sudo apt-get install -y apt-transport-https
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-3.1
 
 DOTNET_VERSION=5.0.0-rc.1.20451.14
 ASPNET_VERSION=5.0.0-rc.1.20451.17
