@@ -45,32 +45,30 @@ echo $'\n########\ninstall global dependencies\n'
 
 sudo apt install -y jq unzip
 
-# install pip3
-echo $'\n########\ninstall pip3\n'
-
-sudo apt install -y python3-pip
-
-# install go
-echo $'\n########\ninstall go\n'
-
-sudo apt install -y golang
-
-# install ruby
-echo $'\n########\ninstall ruby\n'
-
-sudo apt install -y ruby-dev
-
 # install dotnet
 echo $'\n########\ninstall dotnet\n'
 
 cd /tmp
-wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
 
 sudo apt-get update
 sudo apt-get install -y apt-transport-https
-sudo apt-get update
-sudo apt-get install -y dotnet-sdk-3.1
+
+DOTNET_VERSION=5.0.0-rc.1.20451.14
+ASPNET_VERSION=5.0.0-rc.1.20451.17
+DOTNET_SDK_VERSION=5.0.100-rc.1.20452.10
+
+curl -SL --output "dotnet.tar.gz" https://dotnetcli.azureedge.net/dotnet/Runtime/$DOTNET_VERSION/dotnet-runtime-$DOTNET_VERSION-linux-x64.tar.gz
+tar -ozxf "dotnet.tar.gz" -C "/usr/share/dotnet"
+
+rm -rf "dotnet.tar.gz"
+
+curl -SL --output "aspnetcore.tar.gz" https://dotnetcli.azureedge.net/dotnet/aspnetcore/Runtime/$ASPNET_VERSION/aspnetcore-runtime-$ASPNET_VERSION-linux-x64.tar.gz
+tar -ozxf "aspnetcore.tar.gz" ./usr/share/dotnet/shared/Microsoft.AspNetCore.App
+
+rm -rf "aspnetcore.tar.gz"
+
+curl -SL --output "dotnet.tar.gz" https://dotnetcli.azureedge.net/dotnet/Sdk/$DOTNET_SDK_VERSION/dotnet-sdk-$DOTNET_SDK_VERSION-linux-x64.tar.gz
+tar -C "/usr/share/dotnet" -oxzf "dotnet.tar.gz" ./packs ./sdk ./templates ./LICENSE.txt ./ThirdPartyNotices.txt
 
 # install azure cli
 echo $'\n########\ninstall azure cli\n'
