@@ -68,7 +68,8 @@ tar -ozxf "dotnet.tar.gz" -C "/usr/share/dotnet"
 rm -rf "dotnet.tar.gz"
 
 curl -SL --output "aspnetcore.tar.gz" https://dotnetcli.azureedge.net/dotnet/aspnetcore/Runtime/$ASPNET_VERSION/aspnetcore-runtime-$ASPNET_VERSION-linux-x64.tar.gz
-tar -ozxf "aspnetcore.tar.gz" ./usr/share/dotnet/shared/Microsoft.AspNetCore.App
+tar -ozxf "aspnetcore.tar.gz" "./shared/Microsoft.AspNetCore.App"
+mv "./shared/Microsoft.AspNetCore.App" "/usr/share/dotnet/shared/Microsoft.AspNetCore.App"
 
 rm -rf "aspnetcore.tar.gz"
 
