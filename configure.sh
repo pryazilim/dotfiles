@@ -27,7 +27,7 @@ echo $'\n########\nclone dotfiles repo\n'
 
 sudo rm -rf ~/.dotfiles
 
-git clone https://github.com/polatengin/dotfiles.git ~/.dotfiles
+git clone https://github.com/pryazilim/dotfiles.git ~/.dotfiles
 
 # create projects folder
 echo $'\n########\ncreate projects folder\n'
