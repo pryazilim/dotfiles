@@ -56,11 +56,11 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 sudo apt-get install -y apt-transport-https
 sudo apt-get update
-sudo apt-get install -y dotnet-sdk-3.1
+sudo apt-get install -y dotnet-sdk-5.0
 
-DOTNET_VERSION=5.0.0-rc.1.20451.14
-ASPNET_VERSION=5.0.0-rc.1.20451.17
-DOTNET_SDK_VERSION=5.0.100-rc.1.20452.10
+DOTNET_VERSION=5.0.0
+ASPNET_VERSION=5.0.0
+DOTNET_SDK_VERSION=5.0.100
 
 curl -SL --output "dotnet.tar.gz" https://dotnetcli.azureedge.net/dotnet/Runtime/$DOTNET_VERSION/dotnet-runtime-$DOTNET_VERSION-linux-x64.tar.gz
 tar -ozxf "dotnet.tar.gz" -C "/usr/share/dotnet"
