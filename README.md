@@ -9,6 +9,11 @@ As a result, any file with a name beginning with '.' was not reported by ls, i.e
 A user's home directory was a convenient place to put user-specific configuration files, but such files were also an eyesore; one popular solution to this problem was to make those configuration files hidden so that they wouldn't annoy the user.
 Thus, the tradition of dot-files was born.
 
+To install fresh github-runner 
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/pryazilim/dotfiles/master/github-runner-setup.sh)"
+```
+
 You can use my `dotfiles` by executing following command on Terminal
 
 ```bash
